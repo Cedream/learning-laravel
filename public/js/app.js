@@ -2071,7 +2071,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Books__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Books */ "./resources/js/components/Books.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 // import Books from './components/Books';
-//require('./bootstrap');
+// require('./bootstrap');
 // require('./components/Books');
 
 
@@ -2088,9 +2088,8 @@ function App() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-        exact: true,
         path: "/books",
-        component: _components_Books__WEBPACK_IMPORTED_MODULE_2__["default"]
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Books__WEBPACK_IMPORTED_MODULE_2__["default"], {})
       })
     })]
   });

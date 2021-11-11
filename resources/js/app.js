@@ -1,6 +1,6 @@
 
 // import Books from './components/Books';
-//require('./bootstrap');
+// require('./bootstrap');
 // require('./components/Books');
 
 import React from 'react';
@@ -15,7 +15,7 @@ export default function App() {
                 <NavLink to='/books'>Books</NavLink>
             </div>
             <Routes>
-                <Route exact path='/books' component={Books} />
+                <Route path='/books' element={<Books />} ></Route>
             </Routes>
         </Router>
     );
