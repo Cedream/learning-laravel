@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/register', [AuthController::class, 'register']);
+
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/book', 'BookController@index');
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
-
-//Route::get('/book', 'BookController@index');
