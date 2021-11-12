@@ -37,15 +37,23 @@ class AuthController extends Controller
             'password' => 'required|string'
         ]);
 
-        User::where('email', $fields['email'])->first();
+        $user = User::where('email', $fields['email'])->first();
 
-        if (!user || !Hash::check($fields['password'], $user->password)) {
+        if (!$user || !Hash::check($fields['password'], $user->password)) {
             return response(
                 ['message' => 'bad login'],
                 401
             );
         }
 
+        $token = $user->createToken('token')->plainTextToken;
+
+        $response = [
+            'user' => $user,
+            'token' => $token
+        ];
+
+        return response($response, 201);
     }
 
     public function logout(Request $request) {
