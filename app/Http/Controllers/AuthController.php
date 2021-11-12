@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -31,7 +32,20 @@ class AuthController extends Controller
     }
     
     public function login(Request $request) {
-        //
+        $fields = $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string'
+        ]);
+
+        User::where('email', $fields['email'])->first();
+
+        if (!user || !Hash::check($fields['password'], $user->password)) {
+            return response(
+                ['message' => 'bad login'],
+                401
+            );
+        }
+
     }
 
     public function logout(Request $request) {
