@@ -18,7 +18,7 @@ Route::get('/', function() {
     return view('index');
 });
 
-Route::get('/books', function() {
+Route::get('/home', function() {
     return view('index');
 });
 
