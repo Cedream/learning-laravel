@@ -1,8 +1,3 @@
-
-// import Books from './components/Books';
-// require('./bootstrap');
-// require('./components/Books');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
@@ -23,4 +18,25 @@ export default function App() {
         </Router>
     );
 }
-ReactDOM.render(<App />, document.getElementById("app"));
+
+// import React from 'react';
+// import ReduxToastr from 'react-redux-toastr'
+// import 'react-redux-toastr/lib/css/react-redux-toastr.min.css'
+// import AuthRouter from './AuthRouter';
+
+// const App = () => (
+//     <>        
+//         <AuthRouter/>
+//         <ReduxToastr
+//             timeOut={4000}
+//             newestOnTop={false}
+//             preventDuplicates
+//             position="top-right"
+//             getState={(state) => state.toastr}
+//             transitionIn="bounceIn"
+//             transitionOut="bounceOut"
+//             loseOnToastrClick/>
+//         </>
+// );
+
+// export default App
