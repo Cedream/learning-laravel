@@ -2128,9 +2128,7 @@ function PrivateRoute(_ref) {
   var Component = _ref.component;
   var authenticated = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useSelector)(function (state) {
     return state.auth.isAuthenticated;
-  }); //const activeRole = useSelector(state => state.auth.role);
-  //const appropriate = restrictedTo ? activeRole === restrictedTo : true;
-
+  });
   return authenticated ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Component, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
     to: "/login"
   });
@@ -2154,7 +2152,7 @@ var AuthRouter = function AuthRouter() {
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
           to: "/home"
         })
-      }), " "]
+      })]
     })
   });
 };

@@ -15,7 +15,7 @@ const App = () => (
             transitionIn="bounceIn"
             transitionOut="bounceOut"
             loseOnToastrClick/>
-        </>
+    </>
 );
 
 export default App
