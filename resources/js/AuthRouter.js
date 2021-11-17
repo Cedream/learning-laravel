@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import { useSelector } from "react-redux";
@@ -31,14 +31,14 @@ function PrivateRoute({ component: Component, restrictedTo, ...rest }) {
 const AuthRouter = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/login" component={Login} />
+      <Routes>
+        <Route exact path="/login" element={Login} />
         <PrivateRoute
           path="/home"
-          component={Home}
+          element={Home}
         />
-        <Redirect  from="/" to="/home" />
-      </Switch>
+        <Route path="/" render={() => <Redirect to="/home" />} />
+      </Routes>
     </BrowserRouter>
   );
 };
