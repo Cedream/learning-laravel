@@ -13,7 +13,7 @@ const AuthRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/login" element={<Login/>} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/home" element={<PrivateRoute component={Home}/>} />
         <Route path="/" element={<Navigate to="/home" />} />
       </Routes>

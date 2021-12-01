@@ -16,19 +16,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Book::truncate();
-        $faker = \Faker\Factory::create();
-        for ($i = 0; $i < 50; $i++) {
-            Book::create([
-                'title' => $faker->sentence,
-                'author' => $faker->name,
-            ]);
-        }
-        User::truncate();
-        User::create([
-            'name' => 'Alex',
-            'email' => 'alex@alex.com',
-            'password' => Hash::make('pwdpwd'),
-        ]);
+        // Book::truncate();
+        // $faker = \Faker\Factory::create();
+        // for ($i = 0; $i < 50; $i++) {
+        //     Book::create([
+        //         'title' => $faker->sentence,
+        //         'author' => $faker->name,
+        //     ]);
+        // }
+        // User::truncate();
+        // User::create([
+        //     'username' => 'Alex',
+        //     'email' => 'alex@alex.com',
+        //     'password' => Hash::make('pwdpwd'),
+        // ]);
     }
 }

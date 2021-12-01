@@ -1,0 +1,320 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"),
+        url("../fonts/OpenSans/OpenSans-Bold.ttf") format("truetype")
+  }
+  
+  :root {
+    --main-text-color: #757575;
+  }
+  
+  body {
+    margin:0;
+    padding:0;
+    font-family:"Open Sans";
+    background-color: #020b18;
+    /*background:url("./img/Background_3_1920x1080.jpg");*/
+    color: white;
+  }
+  
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  
+  input[type=text],input[type=password] {
+    /* background: #111821;
+    border: none; */
+    background: #020b181c;
+    border: 2px solid #757575;
+    font-size:120%;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius:50px;
+    outline:0;
+    color:#f6f6f7;
+    margin: 5px 0px;
+    transition: font-size 0.3s;
+    box-shadow: rgb(0 0 0 / 17%) 0px 0px 6px 2px;
+    -moz-box-shadow: rgb(0 0 0 / 17%) 0px 0px 6px 2px;
+    -webkit-box-shadow: rgb(0 0 0 / 17%) 0px 0px 6px 2px;
+  }
+  
+  input[type=text]:focus,input[type=password]:focus {
+    background: #070f1b7a;
+    font-size:170%;
+    -webkit-box-shadow: rgb(51 51 51 / 17%) 0px 0px 8px 2px;
+    -moz-box-shadow: rgb(51 51 51 / 17%) 0px 0px 8px 2px;
+    box-shadow: rgb(51 51 51 / 17%) 0px 0px 8px 2px;
+  }
+  
+  
+  .auth__button {
+    display:block;
+    background:transparent;
+    margin: 10px auto;
+    cursor: pointer;
+    color: #ffc90e;
+    border:1px solid #ffc90e;
+    padding: 10px 15px;
+    font-size: 110%;
+    border-radius: 50px;
+    transition: font-size 0.2s;
+    outline:0;
+    box-shadow: rgb(0 0 0 / 17%) 0px 0px 6px 2px;
+    -moz-box-shadow: rgb(0 0 0 / 17%) 0px 0px 6px 2px;
+    -webkit-box-shadow: rgb(0 0 0 / 17%) 0px 0px 6px 2px;
+    font-family:"Open Sans";
+    text-transform:uppercase;
+  }
+  
+  .auth__button:hover {
+    font-size: 140%;
+    background: #e6b100;
+    color:#2f3136;
+  }
+  
+  .auth__button:active {
+    color:#2f3136;
+    background: #c39805;
+  }
+  
+  .main {
+    margin-top: calc(50vh - 310px / 2);
+    padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+  
+  .main__menu {
+    margin-top: calc(30vh - 310px / 2);
+    max-width: 800px;
+    padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .linebreak {
+    color: #cecdcd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin: 20px auto;
+  }
+  
+  .linebreak::before{
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    margin: 0 8px;
+    background-color: grey;
+  }
+  
+  .linebreak::after {
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    margin: 0 8px;
+    background-color: grey;
+  }
+  
+  .logo {
+    cursor:pointer;
+    opacity:.6;
+    transition: opacity .3s;
+  }
+  
+  .logo:hover {
+    opacity:1;
+  }
+  
+  .logo__login {
+    width: 200px;
+    display:block;
+    margin: 10px auto;
+  }
+  
+  .overlay {
+    position:fixed;
+    left:1%;
+    top:1%;
+    z-index:998;
+  }
+  
+  .overlay > .logo__game {
+    width: 140px;
+    vertical-align: middle;
+  }
+  
+  .overlay > .money {
+    opacity: .6;
+    position: relative;
+    font-size: 150%;
+    text-shadow: 1px 1px #000000;
+    top: 5px;
+  }
+  
+  .overlay > .open__menu__label {
+      opacity:0;
+      position: fixed;
+      left: 2%;
+      top: 5%;
+      background: #516175;
+      padding: 5px 10px;
+      color: #eaeaea;
+      font-size: 90%;
+      transition: opacity 0.3s;
+  }
+  
+  .logo__game:hover + .open__menu__label {
+    opacity:1;
+  }
+  
+  .forgotPassword {
+    text-align: right;
+  }
+  
+  .register {
+    text-align:center;
+  }
+  
+  a {
+    color: var(--main-text-color);
+  }
+  
+  .others__solutions {
+    transition: opacity .3s;
+    opacity:.5;
+  }
+  
+  .others__solutions:hover {
+    opacity:1;
+  }
+  
+  .window {
+    position:fixed;
+    height:100%;
+    width:100%;
+    top:0;
+    z-index:999;
+    background: #1d2735f5;  
+    display:none;
+  }
+  
+  .window.is-open{
+    display:block;
+  }
+  
+  .window.transparent {
+    background:transparent;
+  }
+  
+  .window__content {
+    position:relative;
+    width:60%;
+    margin:0px auto;
+  }
+  
+  .window__close {
+    position:absolute;
+    right:5%;
+    top:5%;
+    cursor:pointer;
+    text-align: center;
+    width: 50px;
+  
+  }
+  
+  .window__close:hover > .close{
+    font-size:250% !important;
+  }
+  
+  .window__close > .close {
+    font-size:200% !important;
+    transition: .3s;
+  }
+  
+  .menu {
+    margin-top: calc(50vh - 350px / 2);
+    color: #ffffff8f;
+    font-size: 120%;
+    text-shadow: 1px 1px #081629c7;
+    text-align: center;
+  }
+  
+  .menu__item {
+    text-transform: uppercase;
+    width: 65%;
+    background:#515152c7;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor:pointer;
+    transition:.3s;
+  }
+  
+  .menu__item:hover {
+    font-size:130%;
+    color:white;
+    width:70%;
+  }
+  
+  .menu_extras {
+    color: #ffffff8f;
+    width: 65%;
+    margin: 0px auto;
+    text-align: right;
+  }
+  
+  .menu__item__extra {
+    cursor:pointer;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50px;
+    height: 45px;
+    width: 45px;
+    border: 1px solid #e6e6e629;
+    margin-left:5px;
+  }
+  
+  .menu__item__extra:hover {
+    color:white;
+  }
+  
+  .env {
+    position:absolute;
+    width:100%;
+    height:100%;
+  }
+  
+  .point {
+    width: 5px;
+    height: 5px;
+    background: #081b3a;
+    margin: 0px auto;
+    margin-top: calc(50vh - 5px / 2);
+    border-radius: 167px;
+    box-shadow: 0px 0px 350px 280px #0c2042;
+  }
+  
+  .homebutton {
+    text-align:center;
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    background: #ffffff0d;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom:12px;
+  }
+  
+  .homebutton:hover {
+    font-size: 130%;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
